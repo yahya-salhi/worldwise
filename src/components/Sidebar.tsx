@@ -1,13 +1,16 @@
+import { Outlet } from "react-router-dom";
 import Logo from "./Logo";
-import PageNav from "./PageNav";
+
 import styeles from "./Sidebar.module.css";
+import AppNav from "./AppNav";
 
 export default function Sidebar() {
   return (
     <div className={styeles.sidebar}>
       <Logo />
+      <AppNav />
+      <Outlet />
 
-      <p>list of cities</p>
       <footer className={styeles.footer}>
         <p className={styeles.copyright}>
           &copy; copyright {new Date().getFullYear()}

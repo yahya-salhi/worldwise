@@ -1,12 +1,21 @@
 import styles from "./CountryItem.module.css";
 
-function CountryItem({ country }) {
+interface Country {
+  emoji: string;
+  country: string;
+}
+
+interface CountryItemProps {
+  countrys: Country;
+}
+
+const CountryItem: React.FC<CountryItemProps> = ({ countrys }) => {
   return (
     <li className={styles.countryItem}>
-      <span>{country.emoji}</span>
-      <span>{country.country}</span>
+      <span>{countrys.emoji}</span>
+      <span>{countrys.country}</span>
     </li>
   );
-}
+};
 
 export default CountryItem;
